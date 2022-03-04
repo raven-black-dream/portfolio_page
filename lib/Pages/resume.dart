@@ -9,6 +9,13 @@ class Resume extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> parts = [
+      Markdown(data: resumeHeader),
+      Markdown(data: resumeExperience),
+      Markdown(data: resumeSkills),
+      Markdown(data: resumeEducation)];
+    final List<double> sizes = [100, 650, 150, 220];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.onSecondary,
@@ -54,9 +61,19 @@ class Resume extends StatelessWidget {
         ],
       ),
       body: Container(
-        margin: const EdgeInsets.all(30),
-        child: Markdown(data: resume)
-      ),
+        margin: const EdgeInsets.all(8),
+        child: ListView.separated(
+          itemCount: parts.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              height: sizes[index],
+              color: Theme.of(context).colorScheme.surface,
+              child: Center(child: parts[index])
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+        ),
+      )
     );
   }
 }

@@ -1,9 +1,10 @@
-String resume = """
+String resumeHeader = """
 # Evan Harley
 ## Data Scientist
 
-***
+""";
 
+String resumeExperience = """
 Experience
 ==========
 
@@ -40,15 +41,17 @@ Greensboro, NC, USA
 * Utilized MongoDB, Python, R, and a variety of other tools to analyze the US NIH Cancer SEER data
 * Utilized a variety of ML methods to determine the best predictors of patient outcomes
 * Performed Literature Review and engaged in research of methods and understanding in the field
-----
+""";
 
+String resumeSkills = """
 Skills
 ======
 * __Programming:__ Python, SQL, R, MongoDB, Commandline
 * __Machine Learning and Statistical Modelling:__ Clustering, Multiclass Classification, A/B Testing, Pytorch, Tensorflow
 * __Application Development:__ Django, Flask, FastAPI, Flutter
+""";
 
-----
+String resumeEducation = """
 
 Education
 =========
