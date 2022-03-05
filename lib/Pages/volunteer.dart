@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/markdown_files/volunteer_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class Volunteer extends StatelessWidget {
   const Volunteer({Key? key}) : super(key: key);
@@ -14,27 +16,43 @@ class Volunteer extends StatelessWidget {
         title: const Text("Evan Harley"),
         actions: [
           TextButton(
-            child: const Text("Resume"),
+            child: Text("Resume",
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
               Navigator.popAndPushNamed(context, '/resume');
             },
           ),
           TextButton(
-            child: const Text("Projects"),
+            child: Text("Projects",
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
               Navigator.popAndPushNamed(context, '/projects');
             },
           ),
           TextButton(
-            child: const Text("About Me"),
+            child: Text("About Me",
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
-              Navigator.popAndPushNamed(context, '/about');
+              Navigator.popAndPushNamed(context, "/about");
             },
           ),
           TextButton(
-            child: const Text("Volunteer Work"),
+            child: Text("Volunteer Work",
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
-              Navigator.popAndPushNamed(context,  '/volunteer');
+              Navigator.popAndPushNamed(context, '/volunteer');
             },
           ),
           IconButton(
@@ -51,9 +69,54 @@ class Volunteer extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
-        color: Theme.of(context).colorScheme.surfaceVariant,
-        child: const Text("VOLUNTEER PAGE"),
+      body: ListView(
+        children: [
+          const Center(
+            child: Text(
+              "Volunteer Work",
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold
+              ),
+              )
+          ),
+          Container(
+            margin: const EdgeInsets.all(8),
+            height: 900,
+            child: Column(
+              children: [
+                Container(
+                  height: 75,
+                  child: Markdown(data: volunteerMarkdownHeading)
+                ),
+                Card(
+                  color: Theme.of(context).colorScheme.surface,
+                  child: Column(
+                    children: const [
+                      SizedBox(
+                        height: 50,
+                        child: Markdown(data: "# Regional IT Manager"),
+                      ),
+                      SizedBox(
+                        height: 275,
+                        child: Markdown(data: volunteerMarkdownWebminister),
+                      ),
+                      Divider(),
+                      SizedBox(
+                        height: 50,
+                        child: Markdown(data: "# Instructor"),
+                      ),
+                      SizedBox(
+                        height: 175,
+                        child: Markdown(data: volunteerMarkdownInstructor),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

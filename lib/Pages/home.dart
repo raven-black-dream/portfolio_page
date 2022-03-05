@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/markdown_files/home_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,25 +15,41 @@ class Home extends StatelessWidget {
         title: const Text("Evan Harley"),
         actions: [
           TextButton(
-            child: const Text("Resume"),
+            child: Text("Resume",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
               Navigator.pushNamed(context, '/resume');
             },
           ),
           TextButton(
-            child: const Text("Projects"),
+            child: Text("Projects",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
               Navigator.pushNamed(context, '/projects');
             },
           ),
           TextButton(
-            child: const Text("About Me"),
+            child: Text("About Me",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
               Navigator.pushNamed(context, "/about");
             },
           ),
           TextButton(
-            child: const Text("Volunteer Work"),
+            child: Text("Volunteer Work",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onBackground
+              ),
+            ),
             onPressed: () {
               Navigator.pushNamed(context, '/volunteer');
             },
@@ -50,9 +68,17 @@ class Home extends StatelessWidget {
           )
         ],
       ),
-      body: Container(
-        color: Theme.of(context).colorScheme.surfaceVariant,
-        child: Text("HOME PAGE"),
+      body: Center(
+        child: Container(
+          margin: const EdgeInsets.all(20),
+          child: Container(
+            color: Theme.of(context).colorScheme.surface,
+            height: 700,
+            child: Markdown(
+              data: homeMarkdown,
+            ),
+          ),
+        ),
       ),
     );
   }
