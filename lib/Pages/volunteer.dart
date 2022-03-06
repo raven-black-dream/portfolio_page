@@ -81,29 +81,43 @@ class Volunteer extends StatelessWidget {
               )
           ),
           Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Theme.of(context).colorScheme.onBackground,
+                width: 1
+              ),
+              borderRadius: BorderRadius.circular(12)
+            ),
             margin: const EdgeInsets.all(8),
-            height: 900,
+            height: 715,
             child: Column(
               children: [
-                Container(
-                  height: 75,
+                const SizedBox(
+                  height: 100,
                   child: Markdown(data: volunteerMarkdownHeading)
                 ),
-                Card(
-                  color: Theme.of(context).colorScheme.surface,
+                Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.surface,
+                    borderRadius: BorderRadius.circular(12)
+                  ),
+                  
                   child: Column(
                     children: const [
                       SizedBox(
-                        height: 50,
+                        height: 75,
                         child: Markdown(data: "# Regional IT Manager"),
                       ),
                       SizedBox(
                         height: 275,
                         child: Markdown(data: volunteerMarkdownWebminister),
                       ),
-                      Divider(),
+                      Divider(
+                        height: 10,
+                        thickness: 4,
+                      ),
                       SizedBox(
-                        height: 50,
+                        height: 75,
                         child: Markdown(data: "# Instructor"),
                       ),
                       SizedBox(

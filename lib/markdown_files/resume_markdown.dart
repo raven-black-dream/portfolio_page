@@ -8,9 +8,10 @@ String resumeExperience = """
 Experience
 ==========
 
+""";
 
-## BC Ministry of Transportation and Infrastructure
-### Data Scientist
+const String resumeMOTI = """
+## Data Scientist
 Jan 2021 - Present
 
 Victoria, BC, Canada
@@ -19,10 +20,11 @@ Victoria, BC, Canada
 * Developed a variety of proofs of concept: Autoencoders, Spatiotemporal Demand models
 * Presented to stakeholders resulting in provincial policy changes.
 * Performed literature review, and engaged in research of SOTA forecasting methods for Taxi data.
+""";
 
 
-## Royal BC Museum
-### Information Systems Analyst
+const String resumeRBCM = """
+## Information Systems Analyst
 Jan 2018 - Jan 2021
 
 Victoria, BC, Canada
@@ -31,9 +33,10 @@ Victoria, BC, Canada
 * Coordinated large scale data cleaning projects
 * Developed several proofs of concept using Computer Vision and Natural Language Processing
 
+""";
 
-## Guilford Institute
-### Data Research Assistant
+const String resumeGuilford = """
+## Data Research Assistant
 Jun 2016 - Jan 2018
 
 Greensboro, NC, USA
@@ -43,29 +46,16 @@ Greensboro, NC, USA
 * Performed Literature Review and engaged in research of methods and understanding in the field
 """;
 
-String resumeSkills = """
-Skills
-======
-* __Programming:__ Python, SQL, R, MongoDB, Commandline
-* __Machine Learning and Statistical Modelling:__ Clustering, Multiclass Classification, A/B Testing, Pytorch, Tensorflow
-* __Application Development:__ Django, Flask, FastAPI, Flutter
-""";
 
-String resumeEducation = """
-
-Education
-=========
-
-
-## Udacity.com
-
-Data Analyst Nanodegree
+String resumeUdacity = """
+## Data Analyst Nanodegree
 
 Graduated: June 2016
+""";
 
-## Midlands Technical College
 
-Associate in Science
+String resumeMTC = """
+## Associate in Science
 
 2005 - 2007 
 """;

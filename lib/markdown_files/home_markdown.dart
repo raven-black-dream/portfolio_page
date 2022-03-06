@@ -1,3 +1,0 @@
-String homeMarkdown = """
-# Home Page
-""";

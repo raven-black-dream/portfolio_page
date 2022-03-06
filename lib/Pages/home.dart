@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_website/markdown_files/home_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 
@@ -70,14 +69,31 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          margin: const EdgeInsets.all(20),
-          child: Container(
-            color: Theme.of(context).colorScheme.surface,
-            height: 700,
-            child: Markdown(
-              data: homeMarkdown,
-            ),
-          ),
+          height: 300,
+          color: Theme.of(context).colorScheme.surface,
+          child: Column(
+            children: const [
+              SizedBox(
+                height: 75,
+                child: Markdown(data: "# Welcome!",),
+              ),
+              SizedBox(
+                height: 50,
+                child: Markdown(data: """My name is Evan Harley. Welcome to my portfolio. Here you can find a current
+                copy of my resume, links to my Github and LinkedIn profiles, as well as to
+                individual personal projects that I have worked on or am working on.
+                """),
+              ),
+              SizedBox(
+                height: 30,
+                child: Markdown(data: "This page was developed in flutter to to teach myself a new language and framework."),
+              ),
+              SizedBox(
+                height: 50,
+                child: Markdown(data: "Please take a moment to look around."),
+              )
+            ],
+          )
         ),
       ),
     );
